@@ -1,6 +1,30 @@
 body{
+    h1{
      font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal; 
+    }
+
+       h2{
+     font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal; 
+    }
+
+     .para-1{
+     font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+    }
+
+     .para-2{
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+    
 }
