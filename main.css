@@ -1,0 +1,176 @@
+*{box-sizing:border-box;}
+
+:root{
+  --frame-w:1440px;
+
+  --pad-x:34px;
+  --pad-top:41px;
+
+  --col-gap:25px;
+  --row-gap:40px;
+
+  --h1-size:56px;
+  --h2-size:28px;
+  --p-size:20px;
+  --p-line:1.4;
+
+  --footer-gap:30px;
+
+  --mac-w:360px;
+  --copy-max:600px;
+
+  --topbar-h:96px;   /* header height */
+}
+
+body{
+  margin:0;
+  background:#9A99CC;
+  color:#1b1b1b;
+}
+
+h1,h2,p{margin:0;}
+
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  image-rendering:pixelated;
+}
+
+.frame{
+  max-width:var(--frame-w);
+  margin:0 auto;
+}
+
+/* Header */
+
+.topbar{
+  background:#6D6AA0;
+  height:var(--topbar-h);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 var(--pad-x);
+  height:100%;
+}
+
+.title{
+  font-family:"Pixelify Sans",sans-serif;
+  font-size:var(--h1-size);
+  line-height:1;
+  color:#ffffff;
+}
+
+.happy-mac{
+  height:100%;
+  width:auto;
+  object-fit:contain;
+  image-rendering:pixelated;
+}
+
+/* 12-column grid (single-letter areas) */
+
+.container{
+  max-width:var(--frame-w);
+  margin:0 auto;
+  padding:var(--pad-top) var(--pad-x) 0 var(--pad-x);
+
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  column-gap:var(--col-gap);
+  row-gap:var(--row-gap);
+
+  grid-template-areas:
+    "a a a a a a s s s s s s"
+    "b b b b t t t t t t t t";
+
+  align-items:start;
+  align-content:start;
+  min-height:0;
+}
+
+/* Areas */
+
+.about{grid-area:a;}
+.small-window{grid-area:s;}
+.big-window{grid-area:b;}
+.bottom{grid-area:t;}
+
+/* Typography */
+
+.section-title{
+  font-family:"Pixelify Sans",sans-serif;
+  font-size:var(--h2-size);
+  line-height:1.15;
+  color:#111;
+}
+
+.para{
+  font-family:"Fira Code",monospace;
+  font-size:var(--p-size);
+  line-height:var(--p-line);
+  color:#111;
+}
+
+.para-1{margin-top:14px;}
+
+.about-body{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:96px 1fr;
+  column-gap:14px;
+  align-items:start;
+}
+
+.sidebar-icons{
+  width:96px;
+  max-height:330px;
+}
+
+/* Windows */
+
+.small-window img,
+.big-window img{
+  width:100%;
+  height:auto;
+}
+
+/* Bottom block (text + mac) */
+
+.bottom{
+  display:grid;
+  grid-template-columns:1fr auto;
+  column-gap:40px;
+  align-items:start;
+}
+
+.bottom-text{
+  max-width:var(--copy-max);
+}
+
+.computer{
+  justify-self:end;
+  align-self:start;
+}
+
+.computer img{
+  width:var(--mac-w);
+  height:auto;
+}
+
+/* Dock */
+
+.dock{
+  margin-top:var(--footer-gap);
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+}
+
+.dock-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
